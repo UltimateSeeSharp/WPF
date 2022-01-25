@@ -1,6 +1,6 @@
 Tools for MVVM Wpf:
 
-ICommand
-NotifyProertyChanged
-Autofac
-Serilog
+- ICommand
+- NotifyProertyChanged
+- Autofac
+- Serilog
