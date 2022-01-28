@@ -1,0 +1,7 @@
+<ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+    <ListView.ItemsPanel>
+        <ItemsPanelTemplate>
+            <WrapPanel Margin="0" />
+        </ItemsPanelTemplate>
+    </ListView.ItemsPanel>
+</ListView>
