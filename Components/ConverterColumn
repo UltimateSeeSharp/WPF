@@ -1,0 +1,8 @@
+<DataGridTemplateColumn>
+    <DataGridTemplateColumn.CellTemplate>
+        <DataTemplate>
+            <TextBlock Text="{Binding Property, Converter={StaticResource ContentConverter}}"
+                       Foreground="{Binding Property, Converter={StaticResource ForegroundConverter}}"/>
+        </DataTemplate>
+    </DataGridTemplateColumn.CellTemplate>
+</DataGridTemplateColumn>
