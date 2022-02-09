@@ -32,9 +32,10 @@ public static class Bootstrapper
 
     private static ContainerBuilder Config(this ContainerBuilder builder)
     {
-        var configBuilder = new ConfigurationBuilder();
-        // configBuilder.SetBasePath(Environment.CurrentDirectory).AddJsonFile("appsettings.json", false);
-        configBuilder.AddJsonFile("Config/appsettings.json", false);
+        var configBuilder = new ConfigurationBuilder()
+            .SetBasePath(Environment.CurrentDirectory)
+            .AddJsonFile("appsettings.json", false);
+    
         var config = configBuilder.Build();
 
         builder.Register(x =>
