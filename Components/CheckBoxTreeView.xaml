@@ -1,0 +1,41 @@
+<TreeView ItemsSource="{Binding SourceParentList}">
+
+  <TreeView.Resources>
+      <Style TargetType="{x:Type TreeViewItem}">
+          <Setter Property="Focusable" Value="False"/>
+          <Setter Property="IsSelected" Value="False"/>
+      </Style>
+  </TreeView.Resources>
+
+  <TreeView.ItemTemplate>
+
+      <HierarchicalDataTemplate ItemsSource="{Binding Path=SourceChildrenList}">
+          <StackPanel Margin="0,10,0,4" Orientation="Horizontal">
+              <CheckBox Margin="0,4,10,0"
+                        Checked="CheckBox_CheckedChanged" 
+                        Unchecked="CheckBox_CheckedChanged"
+                        IsChecked="{Binding Included, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+              <TextBlock Margin="1" 
+                         FontFamily="Aharoni"
+                         FontSize="18"
+                         Text="{Binding Name}"/>
+          </StackPanel>
+
+          <HierarchicalDataTemplate.ItemTemplate>
+              <DataTemplate>
+                  <StackPanel Margin="0" Orientation="Horizontal">
+                      <CheckBox Margin="0,4,10,0" IsChecked="{Binding Included, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                Checked="CheckBox_CheckedChanged"
+                                Unchecked="CheckBox_CheckedChanged"/>
+                      <TextBlock Margin="1" 
+                                 FontFamily="Aharoni"
+                                 FontSize="17"
+                                 Text="{Binding Name}"/>
+                  </StackPanel>
+              </DataTemplate>
+          </HierarchicalDataTemplate.ItemTemplate>
+      </HierarchicalDataTemplate>
+
+  </TreeView.ItemTemplate>
+
+</TreeView>
