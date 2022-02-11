@@ -8,7 +8,7 @@ public class UserInputService : IUserInputService
         return fileUpload.FileName;
     }
 
-    public string? GetFolderPath(string? fileNamePath = null, string? addFileType = null)
+    public string? GetFolderPath(string? fileNamePath = null, string? fileType = null, string? addFileType = null)
     {
         var folderDialog = new FolderBrowserDialog();
         folderDialog.ShowDialog();
@@ -20,6 +20,10 @@ public class UserInputService : IUserInputService
             var split = name.Split('.');
             var fileName = split[0];
             var type = split[1];
+            if (fileType is not null)
+            {
+                type = fileType;
+            }
 
             if (addFileType is not null)
             {
