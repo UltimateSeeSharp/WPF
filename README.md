@@ -4,3 +4,6 @@ Tools for MVVM Wpf:
 - NotifyProertyChanged
 - Autofac
 - Serilog
+
+Load list in context:
+context.Entry(project).Collection(item => item.Cutters!).Load();
