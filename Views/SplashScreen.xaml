@@ -1,0 +1,40 @@
+ <Border CornerRadius="25">
+       <Grid>
+           <Border Name="Mask"
+                   Background="Black"
+                   BorderBrush="Transparent"
+                   BorderThickness="5"
+                   CornerRadius="13">
+           </Border>
+           <Grid>
+               <Image Name="Receiver" Source="pack://application:,,,/Images/splashScreen.jpg">
+                   <Image.Effect>
+                       <BlurEffect Radius="0"/>
+                   </Image.Effect>
+               </Image>
+               <Label Content="Liebherr Werk Nenzing"
+                      Margin="0,150,0,0"
+                      FontSize="25"
+                      Foreground="White"/>
+               <Grid Background="LightGray" 
+                           Height="6" 
+                           Margin="100,100,100,0"/>
+               <ProgressBar IsIndeterminate="True"
+                            Background="Transparent"
+                            Foreground="Gold"
+                            Height="6"
+                            Margin="100,100,100,0"/>
+               <Label Content="Überprüfe Dichtungen ..."
+                      Margin="0,350,0,0"
+                      FontSize="17"
+                      Foreground="White"/>
+               <Label Content="v1.0"
+                      Margin="620,410,0,0"
+                      FontSize="12"
+                      Foreground="GhostWhite"/>
+               <Grid.OpacityMask>
+                   <VisualBrush Visual="{Binding ElementName=Mask}" />
+               </Grid.OpacityMask>
+           </Grid>
+       </Grid>
+   </Border>
